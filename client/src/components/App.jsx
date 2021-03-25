@@ -34,22 +34,28 @@ export default function App () {
   const handleWindow1 = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(0px)`;
     let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
-    element.classList.remove('active');
+    if (page !== 0) {
+      element.classList.remove('active');
+    }
     setScroll(0)
     setPage(0)
   }
   const handleWindow2 = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(-600px)`;
     let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
-    element.classList.remove('active');
-    setScroll(-600)
+    if (page !== 3) {
+      element.classList.remove('active');
+    }
     setPage(3)
+    setScroll(-600)
   }
   const handleWindow3 = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(-1200px)`;
-    setScroll(-600)
+    setScroll(-1200)
     let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
-    element.classList.remove('active');
+    if (page !== 6) {
+      element.classList.remove('active');
+    }
     setPage(6)
   }
 
