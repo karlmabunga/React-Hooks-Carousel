@@ -8,7 +8,7 @@ export default function App () {
   const [scroll, setScroll] = useState(0);
   const handleNext = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(${scroll - 600}px)`;
-    let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
+    let element = document.getElementsByClassName('carousel-control')[page / 3]
     element.classList.remove('active');
     if (page === 6) {
       return;
@@ -20,7 +20,7 @@ export default function App () {
   }
   const handlePrev = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(${scroll + 600}px)`;
-    let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
+    let element = document.getElementsByClassName('carousel-control')[page / 3]
     element.classList.remove('active');
     if (page === 0) {
       return;
@@ -33,7 +33,7 @@ export default function App () {
 
   const handleWindow1 = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(0px)`;
-    let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
+    let element = document.getElementsByClassName('carousel-control')[page / 3]
     if (page !== 0) {
       element.classList.remove('active');
     }
@@ -42,7 +42,7 @@ export default function App () {
   }
   const handleWindow2 = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(-600px)`;
-    let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
+    let element = document.getElementsByClassName('carousel-control')[page / 3]
     if (page !== 3) {
       element.classList.remove('active');
     }
@@ -52,7 +52,7 @@ export default function App () {
   const handleWindow3 = () => {
     document.getElementsByClassName('card-container')[0].style.transform = `translateX(-1200px)`;
     setScroll(-1200)
-    let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
+    let element = document.getElementsByClassName('carousel-control')[page / 3]
     if (page !== 6) {
       element.classList.remove('active');
     }
@@ -60,7 +60,7 @@ export default function App () {
   }
 
   useEffect(() => {
-    let element = document.getElementsByClassName('carousel-control')[`${page / 3}`]
+    let element = document.getElementsByClassName('carousel-control')[page / 3]
     element.classList.add('active')
   }, [page])
 
