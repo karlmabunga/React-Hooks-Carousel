@@ -46,11 +46,26 @@
 .button-left {
   position: relative;
   margin-left: 20px;
+  transform: rotate(180deg);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.button-left:hover {
+  background-color: gray;
 }
 
 .button-right {
   position: relative;
   margin-right: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.button-right:hover {
+  background-color: gray;
 }
 
 .carousel-controls {

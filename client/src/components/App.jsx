@@ -68,7 +68,7 @@ export default function App () {
   return (
     <div>
       <div className='carousel-wrapper'>
-        <button className='button-left' onClick={() => handlePrev()} disabled={page === 0 ? true : false}>Previous</button>
+        <button className='button-left' onClick={() => handlePrev()} disabled={page === 0 ? true : false}>></button>
         <div className='window-wrapper'>
           <div className='card-container' style={{ transition: '500ms ease 0s' }}>
             {renderCards.map((card, idx) => {
@@ -82,7 +82,7 @@ export default function App () {
             })}
           </div>
         </div>
-        <button className='button-right' onClick={() => handleNext()} disabled={page === 6 ? true : false}>Next</button>
+        <button className='button-right' onClick={() => handleNext()} disabled={page === 6 ? true : false}>></button>
       </div>
       <ol className="carousel-controls">
         <li className='carousel-control' onClick={handleWindow1}></li>
