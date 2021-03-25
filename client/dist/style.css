@@ -1,0 +1,64 @@
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 860px;
+  margin: 0 auto;
+  margin-top: 100px;
+  transition: transform 500ms ease 0s;
+
+}
+
+.window-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(100% - 250px);
+  overflow: hidden;
+  transition: transform 500ms ease 0s;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.slide {
+
+  flex-shrink: 0;
+  padding: 0 8px;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  background-color: blue;
+  height: 200px;
+  font-size: 30px;
+}
+
+.button-left {
+  position: relative;
+  margin-left: 20px;
+}
+
+.button-right {
+  position: relative;
+  margin-right: 20px;
+}
+
+.carousel-controls {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  bottom: -50px;
+  padding: 0;
+}
