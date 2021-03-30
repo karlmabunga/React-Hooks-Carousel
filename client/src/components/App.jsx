@@ -31,32 +31,14 @@ export default function App () {
     })
   }
 
-  const handleWindow1 = () => {
-    document.getElementsByClassName('card-container')[0].style.transform = `translateX(0px)`;
+  const handleWindow = (newPage, translate) => {
+    document.getElementsByClassName('card-container')[0].style.transform = `translateX(-${translate}px)`;
     let element = document.getElementsByClassName('carousel-control')[page / 3]
-    if (page !== 0) {
+    if (page !== newPage) {
       element.classList.remove('active');
     }
-    setScroll(0)
-    setPage(0)
-  }
-  const handleWindow2 = () => {
-    document.getElementsByClassName('card-container')[0].style.transform = `translateX(-600px)`;
-    let element = document.getElementsByClassName('carousel-control')[page / 3]
-    if (page !== 3) {
-      element.classList.remove('active');
-    }
-    setPage(3)
-    setScroll(-600)
-  }
-  const handleWindow3 = () => {
-    document.getElementsByClassName('card-container')[0].style.transform = `translateX(-1200px)`;
-    setScroll(-1200)
-    let element = document.getElementsByClassName('carousel-control')[page / 3]
-    if (page !== 6) {
-      element.classList.remove('active');
-    }
-    setPage(6)
+    setScroll(translate)
+    setPage(newPage)
   }
 
   useEffect(() => {
@@ -85,9 +67,9 @@ export default function App () {
         <button className='button-right' onClick={() => handleNext()} disabled={page === 6 ? true : false}>></button>
       </div>
       <ol className="carousel-controls">
-        <li className='carousel-control' onClick={handleWindow1}></li>
-        <li className='carousel-control' onClick={handleWindow2}></li>
-        <li className='carousel-control' onClick={handleWindow3}></li>
+        <li className='carousel-control' onClick={() => handleWindow(0, 0)}></li>
+        <li className='carousel-control' onClick={() => handleWindow(3, 600)}></li>
+        <li className='carousel-control' onClick={() => handleWindow(6, 1200)}></li>
       </ol>
     </div>
   )
